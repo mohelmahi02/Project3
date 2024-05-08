@@ -1,23 +1,23 @@
 import { Component, inject } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, InfiniteScrollCustomEvent,IonList,IonItem,IonSkeletonText,IonAvatar,IonAlert,IonLabel,IonBadge,IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, InfiniteScrollCustomEvent,IonList,IonItem,IonSkeletonText,IonAvatar,IonAlert,IonLabel,IonBadge,IonInfiniteScroll, IonInfiniteScrollContent,IonBackButton,IonButtons } from '@ionic/angular/standalone';
 import { MovieService } from '../services/movie.service';
 import { catchError, finalize } from 'rxjs';
 import { MovieResult } from '../services/interface';
 import { DatePipe } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import {  RouterModule } from '@angular/router';
 
 
 
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-home-defer',
+  templateUrl: 'home-defer.page.html',
+  styleUrls: ['home-defer.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonList,IonItem,IonSkeletonText,IonAvatar,IonAlert,IonLabel,DatePipe,RouterModule,IonBadge,IonInfiniteScroll,IonInfiniteScrollContent,RouterModule],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonList,IonItem,IonSkeletonText,IonAvatar,IonAlert,IonLabel,DatePipe,RouterModule,IonBadge,IonInfiniteScroll,IonInfiniteScrollContent,RouterModule,IonBackButton,IonButtons],
 })
-export class HomePage {
+export class HomeDeferPage {
   private movieService = inject(MovieService);
   private currentPage = 1;
   public error = null;

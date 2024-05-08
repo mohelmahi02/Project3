@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Voting Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div>
+  <img src="assets/Bugs.jpg" alt="Bugs Image" style="width: 300px; height: auto;">
+
+  <h2>Vote for Your Favorite Movie Genres</h2>
+  <div *ngFor="let genre of genres">
+    <label>
+      <input type="checkbox" [value]="genre" (change)="toggleGenre(genre)">
+      {{ genre }}
+    </label>
+  </div>
+  <button (click)="submitVote()" class="submit-button">Submit Vote</button>
+</div>
+<div *ngIf="showSelectedGenres">
+  <h3>Your selected genres:</h3>
+  <ul>
+    <li *ngFor="let genre of selectedGenres">{{ genre }}</li>
+  </ul>
+</div>
